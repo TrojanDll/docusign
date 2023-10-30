@@ -1,0 +1,24 @@
+.login__email-label {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 32px;
+
+  span {
+    padding-left: 8px;
+    font-weight: 600;
+    color: $red-color;
+  }
+}
+
+.login__input {
+  margin-top: 8px;
+}
+
+.login__next-button {
+  margin-top: 32px;
+}
+
+.login__sign-up-button {
+  margin-top: 16px;
+}

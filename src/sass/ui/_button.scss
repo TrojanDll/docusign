@@ -1,0 +1,38 @@
+.button {
+  width: 100%;
+  font-size: 16px;
+  align-items: center;
+  border-radius: 2px;
+  display: inline-flex;
+  justify-content: center;
+  letter-spacing: normal;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition-property: background-color, border-color, box-shadow, color;
+  transition-duration: 0.1s;
+  transition-timing-function: cubic-bezier(0.33, 0, 0.67, 1);
+  vertical-align: middle;
+  font-size: 16px;
+  min-height: 40px;
+  min-width: 80px;
+  padding: 4px 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  background-color: #fff;
+  color: $dark-text;
+}
+
+.button:hover {
+  background-color: $button-hovered;
+}
+
+.button_blue {
+  color: rgb(255, 255, 255);
+  background-color: $button-blue;
+}
+
+.button_blue:hover {
+  background-color: $button-blue-hovered;
+}

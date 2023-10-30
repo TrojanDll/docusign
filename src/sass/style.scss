@@ -1,0 +1,26 @@
+@import "variables";
+
+// libs
+@import "libs/fonts";
+@import "libs/reset";
+
+// sections
+@import "sections/main";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "DSIndigo";
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  color: $dark-text;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
