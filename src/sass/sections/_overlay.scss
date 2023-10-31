@@ -27,8 +27,11 @@
 .overlay__code-wrapper {
   margin-top: 30px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  column-gap: 8px;
+  row-gap: 8px;
 }
 
 .overlay__code__input {
@@ -52,4 +55,10 @@
 
 .overlay__confirm-key-error-message {
   margin-top: 8px;
+}
+
+.overlay__modal {
+  .main-wrapper {
+    max-width: 555px;
+  }
 }

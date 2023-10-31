@@ -1,5 +1,6 @@
 .footer {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: 15px 24px;
@@ -8,6 +9,7 @@
   font-size: 10px;
   color: $dark-text;
   overflow: hidden;
+  row-gap: 8px;
 }
 
 .footer__element-logo {
@@ -22,6 +24,8 @@
 
 .footer__links {
   display: flex;
+  flex-wrap: wrap;
+  column-gap: 8px;
 }
 
 .footer__link {
@@ -31,7 +35,7 @@
 
 .footer__link-wrapper {
   display: flex;
-  margin-left: 8px;
+  // margin-left: 8px;
 }
 
 .footer__link::after {
@@ -44,4 +48,10 @@
 
 .footer__link_last::after {
   display: none;
+}
+
+@media (max-width: 1040px) {
+  .footer__link::after {
+    display: none;
+  }
 }

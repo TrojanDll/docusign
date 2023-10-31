@@ -26,3 +26,26 @@
 .login__error-msg {
   margin-top: 8px;
 }
+
+@media (max-width: 1040px) {
+  .login {
+    margin: 0 auto;
+    width: 60%;
+  }
+}
+
+@media (max-width: 600px) {
+  .login {
+    margin: 0 auto;
+    width: 100%;
+  }
+  .login__next-button {
+    min-height: 48px;
+  }
+  .login__input {
+    min-height: 48px;
+  }
+  .login__sign-up-button {
+    min-height: 48px;
+  }
+}

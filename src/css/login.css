@@ -150,6 +150,7 @@ legend {
   border: 1px solid rgba(25, 24, 35, 0.1490196078);
   border-radius: 4px;
   width: 554px;
+  border-collapse: initial;
 }
 
 .main-title {
@@ -166,6 +167,18 @@ legend {
   margin-top: 32px;
 }
 
+@media (max-width: 1040px) {
+  .main-wrapper {
+    padding-left: 64px;
+    padding-right: 64px;
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .main-wrapper {
+    padding: 24px 32px;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -326,10 +339,33 @@ body {
   margin-top: 8px;
 }
 
+@media (max-width: 1040px) {
+  .login {
+    margin: 0 auto;
+    width: 60%;
+  }
+}
+@media (max-width: 600px) {
+  .login {
+    margin: 0 auto;
+    width: 100%;
+  }
+  .login__next-button {
+    min-height: 48px;
+  }
+  .login__input {
+    min-height: 48px;
+  }
+  .login__sign-up-button {
+    min-height: 48px;
+  }
+}
 .footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -342,6 +378,7 @@ body {
   font-size: 10px;
   color: rgba(25, 24, 35, 0.9);
   overflow: hidden;
+  row-gap: 8px;
 }
 
 .footer__element-logo {
@@ -360,6 +397,11 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-column-gap: 8px;
+     -moz-column-gap: 8px;
+          column-gap: 8px;
 }
 
 .footer__link {
@@ -371,7 +413,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-left: 8px;
 }
 
 .footer__link::after {
@@ -386,6 +427,11 @@ body {
   display: none;
 }
 
+@media (max-width: 1040px) {
+  .footer__link::after {
+    display: none;
+  }
+}
 .loading-screen {
   z-index: 110;
   min-height: 100%;
@@ -446,12 +492,18 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-column-gap: 8px;
+     -moz-column-gap: 8px;
+          column-gap: 8px;
+  row-gap: 8px;
 }
 
 .overlay__code__input {
@@ -482,4 +534,8 @@ body {
 
 .overlay__confirm-key-error-message {
   margin-top: 8px;
+}
+
+.overlay__modal .main-wrapper {
+  max-width: 555px;
 }
