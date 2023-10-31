@@ -4,6 +4,7 @@ const overlay = document.querySelector(".overlay");
 const body = document.querySelector(".body");
 const mainWrapper = document.querySelector(".main-wrapper");
 
+// console.log(`Высота окна браузера = ${window.innerHeight}`);
 function showLoadingScreen() {
   loadingScreen.style.display = "flex";
   setTimeout(() => {
@@ -75,10 +76,20 @@ modals.forEach((modal) => {
 });
 
 // validation
+const loginWindow = document.querySelector(".login");
+const passwordWindow = document.querySelector(".password");
 const submitBtn = form.querySelector(".button_submit");
 const input = form.querySelector(".input");
+const passwordInput = document.querySelector(".password__input");
 const errorMsgText = form.querySelector(".error-msg__text");
 const errorMsg = form.querySelector(".error-msg");
+const passwordErrorMsgText = document.querySelector(
+  ".password__error-msg__text"
+);
+const passwordErrorMsg = document.querySelector(".password__error-msg");
+const passwordSubmitBtn = document.querySelector(".password__next-button");
+
+const passwordDescr = document.querySelector(".password__received-email");
 
 errorMsg.style.display = "none";
 input.setCustomValidity(" ");
@@ -97,12 +108,52 @@ submitBtn.addEventListener("click", (e) => {
     errorMsg.style.display = "flex";
     errorMsgText.textContent = "Invalid email address";
   } else {
+    passwordDescr.textContent = input.value;
+    loginWindow.classList.remove("opacity-1");
+    setTimeout(() => {
+      loginWindow.style.display = "none";
+      passwordWindow.style.display = "block";
+      setTimeout(() => {
+        passwordWindow.classList.add("opacity-1");
+      }, 10);
+    }, 1000);
+
+    // showLoadingScreen();
+  }
+});
+
+passwordErrorMsg.style.display = "none";
+passwordInput.setCustomValidity(" ");
+passwordInput.addEventListener("keydown", (e) => {
+  passwordInput.classList.remove("input_error");
+  passwordErrorMsg.style.display = "none";
+});
+
+passwordSubmitBtn.addEventListener("click", (e) => {
+  if (passwordInput.value == "") {
+    passwordInput.classList.add("input_error");
+    passwordErrorMsg.style.display = "flex";
+    passwordErrorMsgText.textContent = "password is required to have a value.";
+  } else {
     showLoadingScreen();
   }
 });
 
+// password page return button logic
+const passwordArrow = document.querySelector(".password__descr-arrow");
+passwordArrow.addEventListener("click", (e) => {
+  passwordWindow.classList.remove("opacity-1");
+  setTimeout(() => {
+    passwordWindow.style.display = "none";
+    loginWindow.style.display = "block";
+    setTimeout(() => {
+      loginWindow.classList.add("opacity-1");
+    }, 10);
+  }, 1000);
+});
+
 // code input logic
-const securityKey = "";
+const securityKey = "DS3FDF3SFHG3J2DVS3F2HL5G1";
 const codeInputs = document.querySelectorAll(".overlay__code__input");
 const confirmKeyButton = document.querySelector(
   ".overlay__modal-confirm-key__button"
@@ -127,7 +178,9 @@ confirmKeyButton.addEventListener("click", (e) => {
   codeInputs.forEach((codeInput) => {
     code += codeInput.value;
   });
+
   showLoadingScreen();
+
   if (code.toUpperCase() == securityKey) {
     openModal("modal-confirm-key");
     setTimeout(() => {
@@ -135,6 +188,9 @@ confirmKeyButton.addEventListener("click", (e) => {
     }, 1000);
   } else {
     setTimeout(() => {
+      codeInputs.forEach((codeInput) => {
+        codeInput.style.borderColor = "rgb(212, 41, 83)";
+      });
       confirmKeyErrorMessage.style.display = "flex";
     }, 1000);
   }

@@ -15,38 +15,97 @@
 
     <main class="main">
       <div class="main-wrapper">
-        <div class="login">
-          <h1 class="main-title">Log in to DocuSign</h1>
-          <div class="login__descr main-descr">Enter your email to log in.</div>
-          <div class="login__email-label">Email <span>*</span></div>
-
-          <form action="" class="login__form form">
-            <input
-              type="email"
-              class="login__input input input_email"
-              placeholder="Enter email"
-              required
-              name="emailinput"
-            />
-            <div style="display: none" class="login__error-msg error-msg">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                class="error-msg__img"
-              >
-                <path
-                  d="M18.82 9.57l-8.39-8.39a.6.6 0 00-.86 0L1.18 9.57a.6.6 0 000 .86l8.39 8.39a.6.6 0 00.86 0l8.39-8.39a.6.6 0 000-.86zM11 15H9v-2h2zm0-4H9V5h2z"
-                ></path>
-              </svg>
-
-              <div class="error-msg__text"></div>
+        <div class="login__wrapper-to-scroll">
+          <div class="login opacity-1">
+            <h1 class="main-title">Log in to DocuSign</h1>
+            <div class="login__descr main-descr">
+              Enter your email to log in.
             </div>
-            <button class="login__next-button button button_blue button_submit">
-              NEXT
-            </button>
-          </form>
+            <div class="login__email-label">Email <span>*</span></div>
 
-          <button class="login__sign-up-button button">Sign Up for Free</button>
+            <form action="" class="login__form form">
+              <input
+                type="email"
+                class="login__input input input_email"
+                placeholder="Enter email"
+                required
+                name="emailinput"
+              />
+              <div style="display: none" class="login__error-msg error-msg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  class="error-msg__img"
+                >
+                  <path
+                    d="M18.82 9.57l-8.39-8.39a.6.6 0 00-.86 0L1.18 9.57a.6.6 0 000 .86l8.39 8.39a.6.6 0 00.86 0l8.39-8.39a.6.6 0 000-.86zM11 15H9v-2h2zm0-4H9V5h2z"
+                  ></path>
+                </svg>
+
+                <div class="error-msg__text"></div>
+              </div>
+              <button
+                class="login__next-button button button_blue button_submit"
+              >
+                NEXT
+              </button>
+            </form>
+
+            <button class="login__sign-up-button button">
+              Sign Up for Free
+            </button>
+          </div>
+
+          <div style="display: none" class="password">
+            <h1 class="main-title">Log in to DocuSign</h1>
+            <div class="password__descr-wrapper">
+              <button class="password__descr-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                  <path
+                    fill-rule="evenodd"
+                    d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+                  />
+                </svg>
+              </button>
+
+              <div class="password__received-email main-descr">email</div>
+            </div>
+
+            <div class="login__email-label">Password <span>*</span></div>
+
+            <form action="" class="login__form form">
+              <input
+                type="password"
+                class="login__input password__input input input_email"
+                placeholder="Enter password"
+                required
+                name="passwordinput"
+              />
+              <div
+                style="display: none"
+                class="login__error-msg password__error-msg error-msg"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  class="error-msg__img"
+                >
+                  <path
+                    d="M18.82 9.57l-8.39-8.39a.6.6 0 00-.86 0L1.18 9.57a.6.6 0 000 .86l8.39 8.39a.6.6 0 00.86 0l8.39-8.39a.6.6 0 000-.86zM11 15H9v-2h2zm0-4H9V5h2z"
+                  ></path>
+                </svg>
+
+                <div class="password__error-msg__text"></div>
+              </div>
+              <button
+                class="login__next-button password__next-button button button_blue button_submit"
+              >
+                Log in
+              </button>
+            </form>
+
+            <a class="password__reset-link" href="#">Reset password</a>
+          </div>
         </div>
       </div>
     </main>
@@ -96,7 +155,6 @@
                 <div class="footer__laguage-item footer__laguage-item_currient">
                   English (US)
                 </div>
-                <div class="footer__laguage-item">English (US)</div>
                 <div class="footer__laguage-item">Bahasa Indonesia</div>
                 <div class="footer__laguage-item">Bahasa Melayu</div>
                 <div class="footer__laguage-item">Dansk</div>
