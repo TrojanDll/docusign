@@ -1,0 +1,15 @@
+.error-msg {
+  display: flex;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  display: flex;
+  color: $red-color;
+}
+
+.error-msg__img {
+  width: 20px;
+  height: 20px;
+  fill: $red-color;
+  margin-right: 8px;
+}

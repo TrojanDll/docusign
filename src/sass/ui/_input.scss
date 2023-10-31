@@ -16,3 +16,7 @@
   transition-property: border, outline;
   max-height: 48px;
 }
+
+.input_error {
+  border-color: $red-color;
+}

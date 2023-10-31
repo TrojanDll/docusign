@@ -1,10 +1,11 @@
 @import "style.scss";
 
+// ui
+@import "ui/input";
+@import "ui/button";
+@import "ui/error-msg";
+
 // sections
 @import "sections/header.scss";
 @import "sections/login";
 @import "sections/footer";
-
-// ui
-@import "ui/input";
-@import "ui/button";

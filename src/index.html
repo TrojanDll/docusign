@@ -20,14 +20,29 @@
           <div class="login__descr main-descr">Enter your email to log in.</div>
           <div class="login__email-label">Email <span>*</span></div>
 
-          <form action="" class="login__form">
+          <form action="" class="login__form form">
             <input
               type="email"
-              class="login__input input"
+              class="login__input input input_email"
               placeholder="Enter email"
               required
             />
-            <button class="login__next-button button button_blue">NEXT</button>
+            <div class="login__error-msg error-msg">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                class="error-msg__img"
+              >
+                <path
+                  d="M18.82 9.57l-8.39-8.39a.6.6 0 00-.86 0L1.18 9.57a.6.6 0 000 .86l8.39 8.39a.6.6 0 00.86 0l8.39-8.39a.6.6 0 000-.86zM11 15H9v-2h2zm0-4H9V5h2z"
+                ></path>
+              </svg>
+
+              <div class="error-msg__text">Some text to test</div>
+            </div>
+            <button class="login__next-button button button_blue button_submit">
+              NEXT
+            </button>
           </form>
 
           <button class="login__sign-up-button button">Sign Up for Free</button>
@@ -81,5 +96,7 @@
         Copyright © 2023 DocuSign, Inc. All rights reserved
       </div>
     </footer>
+
+    <script src="js/validation.js"></script>
   </body>
 </html>
