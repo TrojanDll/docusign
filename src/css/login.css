@@ -387,6 +387,7 @@ body {
 }
 
 .loading-screen {
+  z-index: 110;
   min-height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -422,6 +423,7 @@ body {
 }
 
 .overlay {
+  z-index: 100;
   padding: 20px 0;
   position: fixed;
   -webkit-box-pack: center;
@@ -453,6 +455,8 @@ body {
 }
 
 .overlay__code__input {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 8px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -474,4 +478,8 @@ body {
   border: 1px solid black;
   border-radius: 3px;
   color: #191823;
+}
+
+.overlay__confirm-key-error-message {
+  margin-top: 8px;
 }

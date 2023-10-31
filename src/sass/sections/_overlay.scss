@@ -1,4 +1,5 @@
 .overlay {
+  z-index: 100;
   padding: 20px 0;
   position: fixed;
   // display: flex;
@@ -31,6 +32,7 @@
 }
 
 .overlay__code__input {
+  flex-wrap: wrap;
   padding: 8px;
   display: flex;
   align-items: center;
@@ -46,4 +48,8 @@
   border: 1px solid black;
   border-radius: 3px;
   color: #191823;
+}
+
+.overlay__confirm-key-error-message {
+  margin-top: 8px;
 }

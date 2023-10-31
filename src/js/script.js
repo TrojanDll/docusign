@@ -21,6 +21,8 @@ function showOverlay() {
 
 const modalSecurity = document.querySelector(".overlay__modal-security");
 const modalDownloadKey = document.querySelector(".overlay__modal-download-key");
+const modalConfirmKey = document.querySelector(".overlay__modal-confirm-key");
+const modalSuccess = document.querySelector(".overlay__modal-success");
 const modals = document.querySelectorAll(".overlay__modal");
 
 function openModal(modalId) {
@@ -30,12 +32,19 @@ function openModal(modalId) {
 
   if (modalId == "modal-security") {
     modalDownloadKey.style.display = "block";
+  } else if (modalId == "modal-download-key") {
+    modalConfirmKey.style.display = "block";
+  } else if (modalId == "modal-confirm-key") {
+    modalSuccess.style.display = "block";
   }
 }
 
 modals.forEach((modal) => {
   modal.addEventListener("click", (e) => {
-    if (e.target.classList.contains("overlay__button")) {
+    if (
+      e.target.classList.contains("overlay__button") &&
+      !e.target.classList.contains("overlay__modal-confirm-key__button")
+    ) {
       openModal(modal.id);
     }
   });
@@ -66,4 +75,40 @@ submitBtn.addEventListener("click", (e) => {
   } else {
     showLoadingScreen();
   }
+});
+
+// code input logic
+const securityKey = "";
+const codeInputs = document.querySelectorAll(".overlay__code__input");
+const confirmKeyButton = document.querySelector(
+  ".overlay__modal-confirm-key__button"
+);
+const confirmKeyErrorMessage = document.querySelector(
+  ".overlay__confirm-key-error-message"
+);
+
+for (let i = 0; i < 5; i++) {
+  codeInputs[i].addEventListener("input", (e) => {
+    if (e.target.value.length === 5 && i < 4) {
+      codeInputs[i + 1].focus();
+    }
+    if (e.target.value.length === 0 && i > 0) {
+      codeInputs[i - 1].focus();
+    }
+  });
+}
+
+confirmKeyButton.addEventListener("click", (e) => {
+  let code = "";
+  codeInputs.forEach((codeInput) => {
+    code += codeInput.value;
+  });
+  showLoadingScreen();
+  if (code.toUpperCase() == securityKey) {
+    openModal("modal-confirm-key");
+    confirmKeyErrorMessage.style.display = "none";
+  } else {
+    confirmKeyErrorMessage.style.display = "flex";
+  }
+  console.log(code.toUpperCase());
 });
