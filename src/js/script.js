@@ -7,15 +7,23 @@ const mainWrapper = document.querySelector(".main-wrapper");
 function showLoadingScreen() {
   loadingScreen.style.display = "flex";
   setTimeout(() => {
-    loadingScreen.style.display = "none";
+    loadingScreen.classList.add("loading-screen_opacity-1");
+  }, 10);
+
+  setTimeout(() => {
     showOverlay();
-  }, 2000);
+    loadingScreen.classList.remove("loading-screen_opacity-1");
+    setTimeout(() => {
+      loadingScreen.style.display = "none";
+    }, 1000);
+  }, 3000);
 }
 
 // modals logic
 function showOverlay() {
   mainWrapper.style.display = "none";
   overlay.style.display = "flex";
+  // overlay.style.opacity = "1";
   body.style.overflow = "hidden";
 }
 
@@ -27,16 +35,32 @@ const modals = document.querySelectorAll(".overlay__modal");
 
 function openModal(modalId) {
   modals.forEach((modal) => {
-    modal.style.display = "none";
+    if (modal.classList.contains("overlay__modal-opacity-1")) {
+      modal.classList.remove("overlay__modal-opacity-1");
+      setTimeout(() => {
+        modal.style.display = "none";
+      }, 1000);
+    }
   });
 
-  if (modalId == "modal-security") {
-    modalDownloadKey.style.display = "block";
-  } else if (modalId == "modal-download-key") {
-    modalConfirmKey.style.display = "block";
-  } else if (modalId == "modal-confirm-key") {
-    modalSuccess.style.display = "block";
-  }
+  setTimeout(() => {
+    if (modalId == "modal-security") {
+      modalDownloadKey.style.display = "block";
+      setTimeout(() => {
+        modalDownloadKey.classList.add("overlay__modal-opacity-1");
+      }, 10);
+    } else if (modalId == "modal-download-key") {
+      modalConfirmKey.style.display = "block";
+      setTimeout(() => {
+        modalConfirmKey.classList.add("overlay__modal-opacity-1");
+      }, 10);
+    } else if (modalId == "modal-confirm-key") {
+      modalSuccess.style.display = "block";
+      setTimeout(() => {
+        modalSuccess.classList.add("overlay__modal-opacity-1");
+      }, 10);
+    }
+  }, 1000);
 }
 
 modals.forEach((modal) => {
@@ -106,9 +130,13 @@ confirmKeyButton.addEventListener("click", (e) => {
   showLoadingScreen();
   if (code.toUpperCase() == securityKey) {
     openModal("modal-confirm-key");
-    confirmKeyErrorMessage.style.display = "none";
+    setTimeout(() => {
+      confirmKeyErrorMessage.style.display = "none";
+    }, 1000);
   } else {
-    confirmKeyErrorMessage.style.display = "flex";
+    setTimeout(() => {
+      confirmKeyErrorMessage.style.display = "flex";
+    }, 1000);
   }
   console.log(code.toUpperCase());
 });

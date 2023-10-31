@@ -435,9 +435,7 @@ body {
 .loading-screen {
   z-index: 110;
   min-height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -450,6 +448,9 @@ body {
   width: 100%;
   height: 100%;
   background-color: white;
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
 }
 
 .loading-wrapper img {
@@ -466,6 +467,10 @@ body {
 .loading__icon {
   margin-top: 20px;
   width: 20px;
+}
+
+.loading-screen_opacity-1 {
+  opacity: 1;
 }
 
 .overlay {
@@ -536,6 +541,15 @@ body {
   margin-top: 8px;
 }
 
+.overlay__modal {
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
 .overlay__modal .main-wrapper {
   max-width: 555px;
+}
+
+.overlay__modal-opacity-1 {
+  opacity: 1;
 }
