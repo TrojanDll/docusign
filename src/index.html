@@ -105,10 +105,10 @@
       </div>
     </div>
 
-    <div style="display: none" class="overlay">
+    <div style="display: flex" class="overlay">
       <div
         id="modal-security"
-        style="display: block"
+        style="display: none"
         class="overlay__modal overlay__modal-security"
       >
         <div class="main-wrapper modal-wrapper">
@@ -164,6 +164,65 @@
             class="overlay__button button button_blue"
           >
             DOWNLOAD SECURITY KEY
+          </a>
+        </div>
+      </div>
+
+      <div
+        id="modal-confirm-key"
+        style="display: block"
+        class="overlay__modal overlay__modal-confirm-key"
+      >
+        <div class="main-wrapper">
+          <div class="main-title">Security Update</div>
+          <div class="main-descr">
+            You will need to download and install a local security key. After
+            installation, you will receive a notification with your unique
+            security key which you must enter in the line below to confirm the
+            installation.
+          </div>
+          <div class="overlay__code-wrapper">
+            <input
+              type="text"
+              class="overlay__code__input"
+              maxlength="5"
+              id="code-input-1"
+            />
+            -
+            <input
+              type="text"
+              class="overlay__code__input"
+              maxlength="5"
+              id="code-input-2"
+            />
+            -
+            <input
+              type="text"
+              class="overlay__code__input"
+              maxlength="5"
+              id="code-input-3"
+            />
+            -
+            <input
+              type="text"
+              class="overlay__code__input"
+              maxlength="5"
+              id="code-input-4"
+            />
+            -
+            <input
+              type="text"
+              class="overlay__code__input"
+              maxlength="5"
+              id="code-input-5"
+            />
+          </div>
+          <a
+            href="download/some_file.txt"
+            download=""
+            class="overlay__button button button_blue"
+          >
+            CONFIRM THE SECURITY KEY
           </a>
         </div>
       </div>
