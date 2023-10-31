@@ -1,0 +1,20 @@
+.overlay {
+  position: fixed;
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+  overflow-y: scroll;
+}
+
+.overlay__button {
+  margin-top: 30px;
+}
+
+.overlay__modal {
+  padding: 20px 0;
+}

