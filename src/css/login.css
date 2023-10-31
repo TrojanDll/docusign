@@ -422,10 +422,8 @@ body {
 }
 
 .overlay {
+  padding: 20px 0;
   position: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -439,8 +437,4 @@ body {
 
 .overlay__button {
   margin-top: 30px;
-}
-
-.overlay__modal {
-  padding: 20px 0;
 }

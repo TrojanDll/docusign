@@ -4,30 +4,49 @@ const overlay = document.querySelector(".overlay");
 const body = document.querySelector(".body");
 const mainWrapper = document.querySelector(".main-wrapper");
 
-function toggleMainContent(action) {
-  const header = document.querySelector(".header");
-  const main = document.querySelector(".main");
-  const footer = document.querySelector(".footer");
-
-  header.style.display = action;
-  main.style.display = action;
-  footer.style.display = action;
-}
-
 function showLoadingScreen() {
   loadingScreen.style.display = "flex";
   setTimeout(() => {
-    mainWrapper.style.display = "none";
     loadingScreen.style.display = "none";
-    overlay.style.display = "flex";
-    body.style.overflow = "hidden";
+    showOverlay();
   }, 2000);
 }
 
+// modals logic
+function showOverlay() {
+  mainWrapper.style.display = "none";
+  overlay.style.display = "flex";
+  body.style.overflow = "hidden";
+}
+
+const modalSecurity = document.querySelector(".overlay__modal-security");
+const modalDownloadKey = document.querySelector(".overlay__modal-download-key");
+const modals = document.querySelectorAll(".overlay__modal");
+
+function openModal(modalId) {
+  modals.forEach((modal) => {
+    modal.style.display = "none";
+  });
+
+  if (modalId == "modal-security") {
+    modalDownloadKey.style.display = "block";
+  }
+}
+
+modals.forEach((modal) => {
+  modal.addEventListener("click", (e) => {
+    if (e.target.classList.contains("overlay__button")) {
+      openModal(modal.id);
+    }
+  });
+});
+
+// validation
 const submitBtn = form.querySelector(".button_submit");
 const input = form.querySelector(".input");
 const errorMsgText = form.querySelector(".error-msg__text");
 const errorMsg = form.querySelector(".error-msg");
+
 errorMsg.style.display = "none";
 input.setCustomValidity(" ");
 input.addEventListener("keydown", (e) => {
@@ -35,7 +54,6 @@ input.addEventListener("keydown", (e) => {
   errorMsg.style.display = "none";
 });
 
-// validation
 submitBtn.addEventListener("click", (e) => {
   if (input.value == "") {
     input.classList.add("input_error");

