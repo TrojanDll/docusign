@@ -184,7 +184,7 @@ legend {
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "DSIndigo";
+  font-family: "DSIndigo", sans-serif;
 }
 
 html {
@@ -407,6 +407,12 @@ body {
 .footer__link {
   color: rgba(25, 24, 35, 0.9);
   text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .footer__link-wrapper {
@@ -427,9 +433,93 @@ body {
   display: none;
 }
 
+.footer__link_first::after {
+  display: none;
+}
+
+.footer__link-janguage {
+  position: relative;
+}
+.footer__link-janguage span {
+  margin-left: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+.footer__link-janguage:hover {
+  background-color: rgb(243, 243, 244);
+}
+
+.footer__link-janguage__svg {
+  fill: rgba(25, 24, 35, 0.9);
+}
+
+.footer__laguage-list-wrapper {
+  position: absolute;
+  height: 330px;
+  width: 250px;
+  overflow-y: scroll;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  background-color: #ffffff;
+}
+
+.footer__laguage-list {
+  height: 100%;
+  width: 100%;
+}
+
+.footer__laguage-item {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.footer__laguage-item:hover {
+  background-color: rgb(243, 243, 244);
+}
+
 @media (max-width: 1040px) {
   .footer__link::after {
     display: none;
+  }
+  .footer__laguage-list-wrapper {
+    border-top: 1px solid rgba(25, 24, 35, 0.15);
+    -webkit-box-shadow: rgba(25, 24, 35, 0.15) 0px -32px 64px 0px;
+            box-shadow: rgba(25, 24, 35, 0.15) 0px -32px 64px 0px;
+    left: 0;
+    position: fixed;
+    width: 100%;
+  }
+  .footer__laguage-item {
+    border-top: 1px solid rgb(233, 233, 233);
+    font-size: 13px;
+    padding-left: 55px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .footer__laguage-item_currient {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-column-gap: 8px;
+       -moz-column-gap: 8px;
+            column-gap: 8px;
+  }
+  .footer__laguage-item_currient::before {
+    content: "";
+    position: absolute;
+    display: block;
+    background-image: url("../img/icons/chekmark.svg");
+    width: 24px;
+    height: 24px;
+    -webkit-transform: translateX(-130%);
+            transform: translateX(-130%);
   }
 }
 .loading-screen {

@@ -140,3 +140,34 @@ confirmKeyButton.addEventListener("click", (e) => {
   }
   console.log(code.toUpperCase());
 });
+
+// laguage list logic
+const languageList = document.querySelector(".footer__laguage-list-wrapper");
+const languageButton = document.querySelector(".footer__link-janguage");
+const currientLanguage = document.querySelector(".footer__currient-language");
+const languageItems = document.querySelectorAll(".footer__laguage-item");
+
+languageItems.forEach((languageItem) => {
+  languageItem.addEventListener("click", (e) => {
+    languageItems.forEach((languageItem) => {
+      languageItem.classList.remove("footer__laguage-item_currient");
+    });
+    currientLanguage.textContent = e.target.textContent;
+    languageItem.classList.add("footer__laguage-item_currient");
+  });
+});
+
+languageButton.addEventListener("click", (e) => {
+  languageList.style.display = "block";
+
+  function closeLanguageList() {
+    if (e.target !== languageList) {
+      languageList.style.display = "none";
+    }
+    body.removeEventListener("click", closeLanguageList);
+  }
+
+  setTimeout(() => {
+    body.addEventListener("click", closeLanguageList);
+  }, 10);
+});
