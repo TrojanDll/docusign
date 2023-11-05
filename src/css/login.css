@@ -337,6 +337,10 @@ body {
   color: rgb(212, 41, 83);
 }
 
+.login__descr {
+  margin-top: 32px;
+}
+
 .login__input {
   margin-top: 8px;
 }
@@ -412,7 +416,7 @@ body {
   height: 20px;
 }
 
-.main-descr {
+.password__descr {
   margin-top: 0;
 }
 
