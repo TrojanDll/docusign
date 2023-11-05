@@ -134,7 +134,7 @@ legend {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #ffffff;
+  background-color: #f7f5f6;
   overflow-y: auto;
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
@@ -705,7 +705,8 @@ body {
   -webkit-transition: opacity 1s;
   transition: opacity 1s;
 }
-.overlay__modal .main-wrapper {
+
+.main-wrapper {
   max-width: 555px;
 }
 
@@ -721,4 +722,20 @@ body {
 
 .main-title {
   font-size: 22px;
+}
+
+.security-update {
+  width: 850px;
+  max-width: 850px;
+}
+
+.overlay__modal-security {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 850px;
+  max-width: 850px;
 }

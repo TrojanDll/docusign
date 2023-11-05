@@ -60,9 +60,10 @@
 .overlay__modal {
   opacity: 0;
   transition: opacity 1s;
-  .main-wrapper {
-    max-width: 555px;
-  }
+}
+
+.main-wrapper {
+  max-width: 555px;
 }
 
 .overlay__modal-opacity-1 {
@@ -77,4 +78,16 @@
 
 .main-title {
   font-size: 22px;
+}
+
+.security-update {
+  width: 850px;
+  max-width: 850px;
+}
+
+.overlay__modal-security {
+  display: flex;
+  justify-content: center;
+  width: 850px;
+  max-width: 850px;
 }
